@@ -1,0 +1,40 @@
+//operators
+
+//comparison operators
+
+
+//greater than --> $gt
+//greater than and equal to -->$gte
+//finding all the age greater than and equal to 20
+db.collectionName.find({age:{$gte:20}})
+
+//less than --> $lt
+//less than and equal to --> $lte
+//finding all the less than and equal to documents in a collection
+db.collectionNmae.find({age:{$lte:30}})
+
+//equal to --> $eq
+//not equal to --> $ne
+//getting all equal and not equal documtes from a collection
+db.collectionName.find({age:{$eq:20}})
+db.collectioName.find({age:{$ne:"bala"}})
+
+//finding documents that are matching matching to a array
+db.collectionName.find({age:{$in:[20,21,30]}})
+
+
+//Logical operators
+
+//it is used to join two query conditions
+//$and --> if both conditions are needed
+//$or --> either of the conditions are needed
+//$not --> to avoid or negates that document
+//$nor --> to avoid or negates all the conditions of a query
+
+//example
+db.collectionName.find({$and:
+[
+    {name:"balaji"},
+    {age:{$gte:20}}
+]
+})

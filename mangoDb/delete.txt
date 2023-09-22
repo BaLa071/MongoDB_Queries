@@ -1,0 +1,5 @@
+//delete the first matching document
+db.collectionName.deleteOne({name:"balaji"})
+
+//delete many matching documents
+db.collectionName.deleteMany({name:"balaji"})

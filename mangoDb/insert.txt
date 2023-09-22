@@ -1,0 +1,47 @@
+//DB connection
+db.createCollection("collectioName")
+
+//creating new collection is not mandatory ,as while inserting document will implictly create a collection
+//inserting single document
+db.collectionName.insertOne({
+    name:"balaji",
+    age:21,
+})
+
+//inserting multiple documents
+db.collectionName.insert([
+    {name:"balaji",age:21},
+    {name:"kishore",age:21},
+])
+
+//can insert empty document in mongo
+db.collectionName.insertOne({})
+
+//fileds are optional,no need to give data to all fileds
+db.collectionName.insertOne({age:21})
+
+//objects or arrays can be nested 
+db.collectionName.insertOne({
+    name:"balaji",
+    age:21,
+    skills:[
+        "C",
+        "C++",
+        "Go",
+    ],
+    dateOfBirth:{
+        "date":11,
+        "month:"Aug",
+        "year":2002,
+    },
+})
+
+//Every document has a unique _id value assigned to it automatically
+//we can change that unique _id
+db.collectionName.insertOne({
+    _id:1,
+    name:"balaji",
+    age:21,
+})
+
+//_id need to be unique..if we add other document with same _id will leads to error(duplicate _id)

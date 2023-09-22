@@ -1,0 +1,19 @@
+//Queries for update are in the form of 
+db.collectionName.updateOne(<filter>,<update>)
+
+//example
+db.collectionName.updateOne({name:"balaji"},{$set:{name:"bala",age:20}})
+
+//we can update many documents at a time
+db.collectionName.update({age:21}{$set:{age:20}})
+
+//we can use (upsert:true) to insert a document if it doesnot exist in that collection
+db.collectionName.update({name:"bala"},
+    { $set:
+        {
+            age:20,
+            name:"kishore",
+        }
+    },
+    {upsert:true}
+)

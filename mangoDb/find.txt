@@ -1,0 +1,22 @@
+//Query for searching a document
+db.collectionName.find("filters -->that we use to find a document")
+
+//MongoDb queries take in js object and search for documents with matching
+//returns the first matching document
+db.collectionName.findOne({name:"balaji"})
+
+//find too support nested objects and arrays like insert
+db.collectionName.find({
+        name:"balaji",
+        age:21,
+        skills:[
+            "C",
+            "C++",
+            "Go",
+        ],
+        dateOfBirth:{
+            date:11,
+            month:"Aug",
+            year:2002,
+        }
+    })
